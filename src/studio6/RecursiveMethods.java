@@ -9,12 +9,16 @@ public class RecursiveMethods {
 	 * 
 	 * @param n the number of terms to include in the sum
 	 * @return the sum of the first n terms of the geometric series (1/2 + 1/4 + 1/8
-	 *         ...)
+	 *         ...) Stop when counter = n
 	 */
 	public static double geometricSum(int n) {
 		
-			// FIXME compute the geometric sum for the first n terms recursively
-			return 0;
+			if (n == 0) {
+				return 0;
+			}
+			else {
+				return Math.pow(0.5, n)+geometricSum(n-1);
+			}
 		
 	}
 
@@ -28,8 +32,14 @@ public class RecursiveMethods {
 	 */
 	public static int gcd(int p, int q) {
 		
-			// FIXME compute the gcd of p and q using recursion
-			return 0;
+			if (q != 0) {
+				return q = gcd(q,p%q);
+				// p = 1 q = 6; 
+				// q = gcd(6, 1) = 1|| q = gcd(1, 0) || 
+			}
+			else {
+				return p;
+			}
 		
 	}
 
